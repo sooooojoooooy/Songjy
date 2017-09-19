@@ -4,9 +4,24 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Setting</string>
+
+    <!-- PageName start -->
     <string name="contact_me">Contact Me</string>
+    <string name="home_page">Home Page</string>
+    <string name="setting_page_title">Settings</string>
+    <!-- PageName end   -->
+
     <!-- I18N start  -->
+    <string name="language">Language</string>
+    <string name="language_pref_summary">Choose a language</string>
     <string name="language_cn">简体中文</string>
     <string name="language_en">English</string>
+    <string name="language_jp">日本語</string>
     <!-- I18N  end   -->
+
+    <!-- 设置 start -->
+    <string name="setting_system">System</string>
+    <string name="setting_clear_cache">Clear Cache</string>
+    <string name="clean_up_finished">Clean Up Finished</string>
+    <!-- 设置  end  -->
 </resources>

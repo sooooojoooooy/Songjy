@@ -4,9 +4,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.annotation.LayoutRes;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+
+import com.songjy.introduction.R;
+
+import butterknife.ButterKnife;
 
 /**
  * Created by songjiyuan on 17/9/15.
@@ -21,6 +27,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "BaseActivity-->onCreate()");
         setContentView(bindLayout());
+        ButterKnife.bind(this);
         Bundle bundle = getIntent().getExtras();
         initParms(bundle);
         initView();
@@ -34,6 +41,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     public void startActivity(Class<?> clz) {
         startActivity(new Intent(BaseActivity.this, clz));
+        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
     }
 
     /**
@@ -49,6 +57,7 @@ public abstract class BaseActivity extends AppCompatActivity {
             intent.putExtras(bundle);
         }
         startActivity(intent);
+        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
     }
 
 
@@ -68,7 +77,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     /**
      * [初始化控件]
-     *
      */
     public abstract void initView();
 
@@ -114,6 +122,12 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         Log.d(TAG, "onDestroy()");
+        ButterKnife.unbind(this);
     }
 
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+    }
 }

@@ -8,30 +8,9 @@
     tools:context="com.songjy.introduction.activity.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/btn_en"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/language_en"
-            android:onClick="changeToEn"/>
-
-        <Button
-            android:id="@+id/btn_cn"
-            android:text="@string/language_cn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="changeToCn"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="清理"
-            android:onClick="toClear"
-            android:id="@+id/btn_to_clear"/>
-    </LinearLayout>
+        android:id="@+id/flay_main_content"/>
+    
 </android.support.constraint.ConstraintLayout>
