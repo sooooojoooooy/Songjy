@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/apple/.android/build-cache/0f3e36f71b1ff8077ca109e71b8894ce53c047c9/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="cddcd0fb93bc70e27325f2f715b2710332004ebb">
+        <dex dex="/Users/apple/Documents/workspace/SongJY/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_0c41bcb182e1871138f8b69203792c8328e54956/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/apple/.android/build-cache/4abeb70910e392842ac0a0a54a563f0accdff921/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
+        <dex dex="/Users/apple/Documents/workspace/SongJY/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5161910fcecabdadac40cdde26933aa604291017/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/apple/.android/build-cache/498f2ecea47ea3fd708237fcb33e045c64ef7e51/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="fcd01fd11233459f546c437ec927e9b61bf7caf1">
+        <dex dex="/Users/apple/Documents/workspace/SongJY/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_fd168be9a3ba17d0279663f224bf96930151f5f2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/apple/.android/build-cache/cea3adbb1136d3d851b0cc63079e713ed969f0fc/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
+        <dex dex="/Users/apple/Documents/workspace/SongJY/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f8eeb104bcec3c7eb750d071656ec212794053c9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/apple/Documents/workspace/SongJY/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="fe1571c6750b8329e2f6738cb1c0ce0259720625">
+        <dex dex="/Users/apple/Documents/workspace/SongJY/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_23ac1b69e84761e520f05d7fccbf389967331e2b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/apple/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/26.0.0-alpha1/support-annotations-26.0.0-alpha1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="023ee503b631f69511e335a061ea008f8da60f40">
+        <dex dex="/Users/apple/Documents/workspace/SongJY/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-26.0.0-alpha1_ecfab9245e34b41d6133e435a1fbfce40e2b2eef/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/apple/Library/Android/sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="/Users/apple/Documents/workspace/SongJY/app/build/intermediates/transforms/dex/debug/folders/1000/10/constraint-layout-solver-1.0.2_e318c25c89e4efb38b25b20d7d71d43e5ba34206/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/apple/.android/build-cache/904891191444b1e6abba1dd97cd79357e9e844b7/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
+        <dex dex="/Users/apple/Documents/workspace/SongJY/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_060c371dc3f99e63fc57e3c536a0ca629ba5cb52/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/apple/.android/build-cache/97e27816aba9f958cd6196b268fd48c0f5ac72f7/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="/Users/apple/Documents/workspace/SongJY/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3b05bd07ce6069afea8bbece19bc57ffd3631c9c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/apple/.android/build-cache/e1766c3d8c0816313b66e5295f8a5c316fe50cd5/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="47471eb19df288158b00b8d9cfa41bce7373f5cc">
+        <dex dex="/Users/apple/Documents/workspace/SongJY/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_de18954ffafc0d624cf1b7da4cdc63757f1c5a7d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/apple/.android/build-cache/e29f6d26df727a39b7e93b5a08cf7db6bd83bf33/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/apple/Documents/workspace/SongJY/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1418cae4180f11937c5c71c14fbe38aba7540158/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/apple/.android/build-cache/6ceeb4d68a309db8a6cf93271ffd3ce74a68109e/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="9935891f23923f39d002087085d9696568a9f657">
+        <dex dex="/Users/apple/Documents/workspace/SongJY/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d5bf62965309fcf4e208a681026a25ec2965c0f6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/apple/Documents/workspace/SongJY/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="/Users/apple/Documents/workspace/SongJY/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_a500fbe716e23d2ff8c6ad0dd8683ac396b69c7a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/apple/.android/build-cache/1eb978864af690650efd02bd5d781aa1b659f408/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="c4f45092eee6cdf1a5dbd597b2b6819be652ce2e">
+        <dex dex="/Users/apple/Documents/workspace/SongJY/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5af371bc9a4ede314e2994d7ff3d7e3db6ec26c3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/apple/.android/build-cache/1434f17e418b18b13049f4a9b0454ee967ad1c1d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
+        <dex dex="/Users/apple/Documents/workspace/SongJY/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_0a2d1fbc274ff6cca4cd17665434569ebdca4df7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/apple/.android/build-cache/624d51e4df806644ff5e00679808466dabf0ce09/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="6a022bf00ccd0948a8180c505e8e458bbddd43a6">
+        <dex dex="/Users/apple/Documents/workspace/SongJY/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_7779349b85ad8e0be0349d09c1eb6c28719e4ef8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/apple/.android/build-cache/44c68853bff06e668697562934bed77cadbbd160/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="952944218ecedea1554a513dec0c14d570642843">
+        <dex dex="/Users/apple/Documents/workspace/SongJY/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_836a8220044b057b8fdce6ddfb25af69f7a49082/classes.dex" />
+    </item>
+
+</items>
