@@ -25,9 +25,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import com.songjy.introduction.R;
-import com.songjy.introduction.ui.BaseFragment;
-import com.songjy.introduction.ui.HomeFragment;
-import com.songjy.introduction.ui.SettingFragment;
+import com.songjy.introduction.ui.*;
 
 import java.util.Locale;
 

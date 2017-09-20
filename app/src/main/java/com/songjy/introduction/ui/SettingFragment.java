@@ -105,7 +105,8 @@ public class SettingFragment extends PreferenceFragment {
     private void restartApplication() {
         final Intent intent = getActivity().getPackageManager()
                 .getLaunchIntentForPackage(getActivity().getPackageName());
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
+        getActivity().finish();
     }
 }
