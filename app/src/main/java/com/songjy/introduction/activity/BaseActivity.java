@@ -29,7 +29,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(bindLayout());
         ButterKnife.bind(this);
         Bundle bundle = getIntent().getExtras();
-        initParms(bundle);
+        initParams(bundle);
         initView();
         doBusiness(this);
     }
@@ -66,7 +66,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      *
      * @param parms
      */
-    public abstract void initParms(Bundle parms);
+    public abstract void initParams(Bundle parms);
 
     /**
      * [绑定布局]

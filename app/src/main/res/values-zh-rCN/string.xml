@@ -6,7 +6,7 @@
     <string name="action_settings">设置</string>
 
     <!-- PageName start -->
-    <string name="contact_me">联系我</string>
+    <string name="contact_me"> 联系我</string>
     <string name="home_page">主页</string>
     <string name="setting_page_title">设置</string>
     <!-- PageName end   -->
@@ -24,4 +24,23 @@
     <string name="setting_clear_cache">清除缓存</string>
     <string name="clean_up_finished">清理完毕</string>
     <!-- 设置  end  -->
+
+    <!-- 提示 start -->
+    <string name="warning_qq_not_installed">你好像并没有安装QQ啊！(⊙_⊙;)</string>
+    <string name="dont_have_call_permission">请开启权限！</string>
+    <string name="confirm">确认</string>
+    <string name="cancel">取消</string>
+    <string name="sure">行</string>
+    <string name="of_course_not">不行</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <!-- 提示  end -->
+
+    <!-- 联系 start -->
+    <string name="contact_qq">QQ 联系我</string>
+    <string name="contact_wechat">Wechat 联系我</string>
+    <string name="contact_phone">Phone 联系我</string>
+    <string name="contact_sms">SMS 联系我</string>
+    <string name="contact_email">E-mail 联系我</string>
+    <!-- 联系  end -->
 </resources>

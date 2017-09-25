@@ -24,4 +24,23 @@
     <string name="setting_clear_cache">Clear Cache</string>
     <string name="clean_up_finished">Clean Up Finished</string>
     <!-- 设置  end  -->
+
+    <!-- 提示 start -->
+    <string name="warning_qq_not_installed">Sorry QQ not Installed!</string>
+    <string name="dont_have_call_permission">Please give me permission!</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="sure">Sure</string>
+    <string name="of_course_not">Of course not</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <!-- 提示  end -->
+
+    <!-- 联系 start -->
+    <string name="contact_qq">QQ Contact me</string>
+    <string name="contact_wechat">Wechat Contact me</string>
+    <string name="contact_phone">Phone Contact me</string>
+    <string name="contact_sms">SMS Contact me</string>
+    <string name="contact_email">E-mail Contact me</string>
+    <!-- 联系  end -->
 </resources>

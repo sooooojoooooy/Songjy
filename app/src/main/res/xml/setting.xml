@@ -7,10 +7,12 @@
             android:title="@string/language"
             android:summary="@string/language_pref_summary"
             android:entries="@array/entries_list_preference"
+            android:icon="@drawable/ic_setting_language"
             android:entryValues="@array/entryvalues_list_preference"
             android:dialogTitle="@string/language" />
         <Preference
             android:key="clear_cache"
+            android:icon="@drawable/ic_setting_clean"
             android:title="@string/setting_clear_cache" />
         <!--<Preference-->
             <!--android:key="change_update_time"-->

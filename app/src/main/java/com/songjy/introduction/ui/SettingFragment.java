@@ -2,6 +2,8 @@ package com.songjy.introduction.ui;
 
 
 import android.annotation.TargetApi;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -24,6 +26,7 @@ import android.widget.Toast;
 import com.songjy.introduction.R;
 import com.songjy.introduction.activity.MainActivity;
 import com.songjy.introduction.activity.SettingsActivity;
+import com.songjy.introduction.activity.SplashActivity;
 import com.songjy.introduction.common.C;
 import com.songjy.introduction.common.Keys;
 import com.songjy.introduction.common.utils.BasePreference;
@@ -103,10 +106,11 @@ public class SettingFragment extends PreferenceFragment {
         });
     }
     private void restartApplication() {
-        final Intent intent = getActivity().getPackageManager()
-                .getLaunchIntentForPackage(getActivity().getPackageName());
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-        getActivity().finish();
+        Intent intent = new Intent(getActivity(), SplashActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        getActivity().startActivity(intent);
+        // 杀掉进程
+        android.os.Process.killProcess(android.os.Process.myPid());
+        System.exit(0);
     }
 }

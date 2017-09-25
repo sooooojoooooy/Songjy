@@ -2,10 +2,13 @@ package com.songjy.introduction.ui;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import butterknife.ButterKnife;
 
 /**
  * Created by songjiyuan on 17/9/19.
@@ -28,8 +31,15 @@ public abstract class BaseFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(getLayoutId(), container, false);
+        ButterKnife.bind(this,view);
         initView(view, savedInstanceState);
         return view;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.unbind(this);
     }
 
     protected abstract void initView(View view, Bundle savedInstanceState);
@@ -58,4 +68,8 @@ public abstract class BaseFragment extends Fragment {
         mListener = null;
     }
 
+    public void showSnackbar(View view,String msg) {
+        Snackbar.make(view, msg, Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show();
+    }
 }

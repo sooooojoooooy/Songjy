@@ -1,33 +1,35 @@
 package com.songjy.introduction.activity;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.os.Build;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
-import android.support.annotation.RequiresApi;
+import android.provider.Settings;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
-import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.songjy.introduction.R;
+import com.songjy.introduction.common.Keys;
 import com.songjy.introduction.ui.*;
-
-import java.util.Locale;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -49,11 +51,17 @@ public class MainActivity extends BaseActivity
     private Fragment displayFragment;
     private FragmentManager mFragmentMan;
     private HomeFragment homeFragment;
+    private ContactFragment contactFragment;
     private PreferenceFragment settingFragment;
 
     @Override
-    public void initParms(Bundle parms) {
+    public void initParams(Bundle parms) {
 
+    }
+
+    @Override
+    public boolean isInMultiWindowMode() {
+        return super.isInMultiWindowMode();
     }
 
     @Override
@@ -136,25 +144,15 @@ public class MainActivity extends BaseActivity
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
-
+            if (null == contactFragment) {
+                contactFragment = new ContactFragment();
+            }
+            switchContent(contactFragment);
         } else if (id == R.id.nav_send) {
 
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
-    public void changeToEn(View view) {
-        Resources resources = this.getResources();
-        DisplayMetrics dm = resources.getDisplayMetrics();
-        Configuration config = resources.getConfiguration();
-        // 应用用户选择语言
-        config.setLocale(Locale.US);
-        resources.updateConfiguration(config, dm);
-        finish();
-        Intent intent = new Intent(MainActivity.this, MainActivity.class);
-        startActivity(intent);
     }
 
     public void switchContent(Fragment to) {

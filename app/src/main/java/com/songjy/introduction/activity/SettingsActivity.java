@@ -13,7 +13,7 @@ import com.songjy.introduction.ui.SettingFragment;
 public class SettingsActivity extends BaseActivity {
 
     @Override
-    public void initParms(Bundle parms) {
+    public void initParams(Bundle parms) {
 
     }
 
