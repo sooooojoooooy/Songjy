@@ -6,6 +6,7 @@
     <string name="action_settings">Setting</string>
 
     <!-- PageName start -->
+    <string name="baidu_map">Map</string>
     <string name="contact_me">Contact Me</string>
     <string name="home_page">Home Page</string>
     <string name="setting_page_title">Settings</string>

@@ -138,7 +138,7 @@ public class MainActivity extends BaseActivity
             }
             switchContent(homeFragment);
         } else if (id == R.id.nav_gallery) {
-
+            startActivity(MapActivity.class);
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {

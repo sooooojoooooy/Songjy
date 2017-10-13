@@ -21,4 +21,10 @@ public class C {
 
     //  Url
     public static final String SCHEME_QQ_CONTACT = "mqqwpa://im/chat?chat_type=wpa&uin=";
+
+    // 百度地图设置
+    public static final float BD_ZOOM = 18.0f;
+    public static final int BD_SCAN_SPAN = 1000;
+    public static final String BD_COOR_TYPE = "bd09ll";
+    public static final boolean isGPS = true;
 }

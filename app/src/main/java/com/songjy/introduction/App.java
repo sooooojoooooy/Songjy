@@ -6,6 +6,7 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.util.DisplayMetrics;
 
+import com.baidu.mapapi.SDKInitializer;
 import com.songjy.introduction.common.utils.LanguageManager;
 import com.songjy.introduction.common.utils.PreferenceUtils;
 
@@ -36,6 +37,7 @@ public class App extends Application {
         } else {
             sCacheDir = getApplicationContext().getCacheDir().toString();
         }
+        SDKInitializer.initialize(getApplicationContext());
     }
 
     public static Application getInstance() {
