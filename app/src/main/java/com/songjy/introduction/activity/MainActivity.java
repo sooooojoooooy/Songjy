@@ -1,22 +1,14 @@
 package com.songjy.introduction.activity;
 
-import android.Manifest;
 import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
-import android.provider.Settings;
-import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -25,28 +17,26 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.Toast;
 
 import com.songjy.introduction.R;
-import com.songjy.introduction.common.Keys;
 import com.songjy.introduction.ui.*;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
+import butterknife.BindView;
+import io.reactivex.Observable;
 
 import static com.songjy.introduction.R.id.flay_main_content;
 
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener, BaseFragment.OnFragmentInteractionListener {
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @Bind(R.id.flay_main_content)
+    @BindView(R.id.flay_main_content)
     FrameLayout flayMainContent;
-    @Bind(R.id.fab)
+    @BindView(R.id.fab)
     FloatingActionButton fab;
-    @Bind(R.id.nav_view)
+    @BindView(R.id.nav_view)
     NavigationView navView;
-    @Bind(R.id.drawer_layout)
+    @BindView(R.id.drawer_layout)
     DrawerLayout drawerLayout;
     private Fragment displayFragment;
     private FragmentManager mFragmentMan;
@@ -156,22 +146,18 @@ public class MainActivity extends BaseActivity
     }
 
     public void switchContent(Fragment to) {
-        if (displayFragment != to) {
-            FragmentTransaction transaction = mFragmentMan.beginTransaction();
-            transaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
-            if (!to.isAdded()) {    // 先判断是否被add过
-                transaction.hide(displayFragment).add(flay_main_content, to).commit(); // 隐藏当前的fragment，add下一个到Activity中
-            } else {
-                transaction.hide(displayFragment).show(to).commit(); // 隐藏当前的fragment，显示下一个
-            }
-            displayFragment = to;
-        }
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        ButterKnife.bind(this);
+        Observable.just(to)
+                .filter(fragment -> displayFragment != fragment)
+                .doOnNext(fragment -> {
+                    FragmentTransaction transaction = mFragmentMan.beginTransaction();
+                    transaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
+                    if (!to.isAdded()) {    // 先判断是否被add过
+                        transaction.hide(displayFragment).add(flay_main_content, fragment).commit(); // 隐藏当前的fragment，add下一个到Activity中
+                    } else {
+                        transaction.hide(displayFragment).show(fragment).commit(); // 隐藏当前的fragment，显示下一个
+                    }
+                    displayFragment = fragment;
+                });
     }
 
     @Override

@@ -18,11 +18,12 @@ import com.baidu.mapapi.model.LatLng;
 import com.songjy.introduction.R;
 import com.songjy.introduction.common.C;
 
-import butterknife.Bind;
+import butterknife.BindView;
+import io.reactivex.Observable;
 
 public class MapActivity extends BaseActivity implements BDLocationListener {
 
-    @Bind(R.id.bmapView)
+    @BindView(R.id.bmapView)
     MapView bmapView;
     private BaiduMap mBaiduMap;
     private boolean isFirstLoc = true;
@@ -52,12 +53,12 @@ public class MapActivity extends BaseActivity implements BDLocationListener {
     @Override
     public void doBusiness(Context mContext) {
         mLocClient = new LocationClient(mContext);
-        mLocClient.registerLocationListener(this);
         LocationClientOption option = new LocationClientOption();
         option.setOpenGps(C.isGPS); // 打开gps
         option.setCoorType(C.BD_COOR_TYPE); // 设置坐标类型
         option.setScanSpan(C.BD_SCAN_SPAN);// 定位间隔时间
         mLocClient.setLocOption(option);
+        mLocClient.registerLocationListener(this);
         mLocClient.start();
     }
 
@@ -106,24 +107,26 @@ public class MapActivity extends BaseActivity implements BDLocationListener {
 
     @Override
     public void onReceiveLocation(BDLocation location) {
-        if (location == null || bmapView == null) {
-            return;
-        }
-        mBaiduMap.clear();
-        MyLocationData locData = new MyLocationData.Builder()
-                .accuracy(location.getRadius())
-                .direction(100)// 此处设置开发者获取到的方向信息，顺时针0-360
-                .latitude(location.getLatitude())
-                .longitude(location.getLongitude())
-                .build();
-        mBaiduMap.setMyLocationData(locData);
-        if (isFirstLoc) {
-            isFirstLoc = false;
-            LatLng ll = new LatLng(location.getLatitude(),
-                    location.getLongitude());
-            MapStatus.Builder builder = new MapStatus.Builder();
-            builder.target(ll).zoom(C.BD_ZOOM);
-            mBaiduMap.animateMapStatus(MapStatusUpdateFactory.newMapStatus(builder.build()));
-        }
+        Observable.just(location)
+                .filter(bdLocation -> bdLocation != null && bmapView != null)
+                .doOnNext(bdLocation -> {
+                    mBaiduMap.clear();
+                    MyLocationData locData = new MyLocationData.Builder()
+                            .accuracy(bdLocation.getRadius())
+                            .direction(100)// 此处设置开发者获取到的方向信息，顺时针0-360
+                            .latitude(bdLocation.getLatitude())
+                            .longitude(bdLocation.getLongitude())
+                            .build();
+                    mBaiduMap.setMyLocationData(locData);
+                })
+                .filter(bdLocation -> isFirstLoc)
+                .doOnNext(bdLocation -> {
+                    isFirstLoc = false;
+                    LatLng ll = new LatLng(location.getLatitude(),
+                            location.getLongitude());
+                    MapStatus.Builder builder = new MapStatus.Builder();
+                    builder.target(ll).zoom(C.BD_ZOOM);
+                    mBaiduMap.animateMapStatus(MapStatusUpdateFactory.newMapStatus(builder.build()));
+                });
     }
 }

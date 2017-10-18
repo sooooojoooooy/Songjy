@@ -36,12 +36,6 @@ public abstract class BaseFragment extends Fragment {
         return view;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
-    }
-
     protected abstract void initView(View view, Bundle savedInstanceState);
 
     //获取布局文件ID

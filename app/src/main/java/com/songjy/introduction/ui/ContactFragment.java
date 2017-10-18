@@ -21,22 +21,22 @@ import com.songjy.introduction.common.C;
 import com.songjy.introduction.common.Keys;
 import com.songjy.introduction.common.utils.ContactManager;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class ContactFragment extends BaseFragment {
 
 
-    @Bind(R.id.btn_qq_contact)
+    @BindView(R.id.btn_qq_contact)
     CardView btnQqContact;
-    @Bind(R.id.btn_wechat_contact)
+    @BindView(R.id.btn_wechat_contact)
     CardView btnWechatContact;
-    @Bind(R.id.btn_sms_contact)
+    @BindView(R.id.btn_sms_contact)
     CardView btnSmsContact;
-    @Bind(R.id.btn_phone_contact)
+    @BindView(R.id.btn_phone_contact)
     CardView btnPhoneContact;
-    @Bind(R.id.btn_email_contact)
+    @BindView(R.id.btn_email_contact)
     CardView btnEmailContact;
 
     @Override
@@ -56,12 +56,6 @@ public class ContactFragment extends BaseFragment {
         View rootView = super.onCreateView(inflater, container, savedInstanceState);
         ButterKnife.bind(this, rootView);
         return rootView;
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 
     @Override

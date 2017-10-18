@@ -11,24 +11,19 @@ import android.widget.Button;
 
 import com.songjy.introduction.R;
 import com.songjy.introduction.service.MyService;
-
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Vector;
-
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 
 public class HomeFragment extends BaseFragment implements ServiceConnection {
 
-    @Bind(R.id.btn_bind_service)
+    @BindView(R.id.btn_bind_service)
     Button btnBindService;
-    @Bind(R.id.btn_unbind_service)
+    @BindView(R.id.btn_unbind_service)
     Button btnUnbindService;
-    @Bind(R.id.btn_start_service)
+    @BindView(R.id.btn_start_service)
     Button btnStartService;
-    @Bind(R.id.btn_stop_service)
+    @BindView(R.id.btn_stop_service)
     Button btnStopService;
     MyService.MyBinder myBinder;
 
