@@ -96,13 +96,10 @@ public class SettingFragment extends PreferenceFragment {
                 return true;
             }
         });
-        preClearCache.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-                preClearCache.setSummary("0B");
-                Snackbar.make(getView(), getString(R.string.clean_up_finished), Snackbar.LENGTH_SHORT).show();
-                return true;
-            }
+        preClearCache.setOnPreferenceClickListener(preference -> {
+            preClearCache.setSummary("0B");
+            Snackbar.make(getView(), getString(R.string.clean_up_finished), Snackbar.LENGTH_SHORT).show();
+            return true;
         });
     }
     private void restartApplication() {

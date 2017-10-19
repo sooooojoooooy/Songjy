@@ -127,6 +127,7 @@ public class MapActivity extends BaseActivity implements BDLocationListener {
                     MapStatus.Builder builder = new MapStatus.Builder();
                     builder.target(ll).zoom(C.BD_ZOOM);
                     mBaiduMap.animateMapStatus(MapStatusUpdateFactory.newMapStatus(builder.build()));
-                });
+                })
+                .subscribe();
     }
 }

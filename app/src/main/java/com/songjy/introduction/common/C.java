@@ -21,6 +21,7 @@ public class C {
 
     //  Url
     public static final String SCHEME_QQ_CONTACT = "mqqwpa://im/chat?chat_type=wpa&uin=";
+    public static final String URL_DOUBAN = "https://api.douban.com/v2/movie/top250";
 
     // 百度地图设置
     public static final float BD_ZOOM = 18.0f;

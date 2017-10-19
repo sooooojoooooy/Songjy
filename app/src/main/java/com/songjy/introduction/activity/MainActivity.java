@@ -15,7 +15,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.FrameLayout;
 
 import com.songjy.introduction.R;
@@ -42,6 +41,7 @@ public class MainActivity extends BaseActivity
     private FragmentManager mFragmentMan;
     private HomeFragment homeFragment;
     private ContactFragment contactFragment;
+    private MovieMsgFragment movieMsgFragment;
     private PreferenceFragment settingFragment;
 
     @Override
@@ -61,26 +61,27 @@ public class MainActivity extends BaseActivity
 
     @Override
     public void initView() {
-        setSupportActionBar(toolbar);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawerLayout.setDrawerListener(toggle);
-        toggle.syncState();
-        navView.setNavigationItemSelectedListener(this);
-        if (mFragmentMan == null) {
-            mFragmentMan = getSupportFragmentManager();
-        }
-        homeFragment = HomeFragment.newInstance(null, null);
-        FragmentTransaction transaction = mFragmentMan.beginTransaction();
-        transaction.add(R.id.flay_main_content, homeFragment).commit();
-        displayFragment = homeFragment;
+        Observable.just(MainActivity.this)
+                .doOnNext(context -> {
+                    setSupportActionBar(toolbar);
+                    fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show());
+                    ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                            this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                    drawerLayout.setDrawerListener(toggle);
+                    toggle.syncState();
+                    navView.setNavigationItemSelectedListener(this);
+                })
+                .doOnNext(context -> {
+                    if (mFragmentMan == null) {
+                        mFragmentMan = getSupportFragmentManager();
+                    }
+                    homeFragment = HomeFragment.newInstance(null, null);
+                    FragmentTransaction transaction = mFragmentMan.beginTransaction();
+                    transaction.add(R.id.flay_main_content, homeFragment).commit();
+                    displayFragment = homeFragment;
+                })
+                .subscribe();
     }
 
     @Override
@@ -127,19 +128,20 @@ public class MainActivity extends BaseActivity
                 homeFragment = HomeFragment.newInstance(null, null);
             }
             switchContent(homeFragment);
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_map) {
             startActivity(MapActivity.class);
-        } else if (id == R.id.nav_slideshow) {
-
+        } else if (id == R.id.nav_movie) {
+            if (null == movieMsgFragment){
+                movieMsgFragment = new MovieMsgFragment();
+            }
+            switchContent(movieMsgFragment);
         } else if (id == R.id.nav_manage) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_contact) {
             if (null == contactFragment) {
                 contactFragment = new ContactFragment();
             }
             switchContent(contactFragment);
-        } else if (id == R.id.nav_send) {
-
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
@@ -157,7 +159,8 @@ public class MainActivity extends BaseActivity
                         transaction.hide(displayFragment).show(fragment).commit(); // 隐藏当前的fragment，显示下一个
                     }
                     displayFragment = fragment;
-                });
+                })
+                .subscribe();
     }
 
     @Override

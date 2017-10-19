@@ -7,6 +7,7 @@
 
     <!-- PageName start -->
     <string name="baidu_map">Map</string>
+    <string name="douban_movie">DouBan Movie</string>
     <string name="contact_me">Contact Me</string>
     <string name="home_page">Home Page</string>
     <string name="setting_page_title">Settings</string>
@@ -44,4 +45,10 @@
     <string name="contact_sms">SMS Contact me</string>
     <string name="contact_email">E-mail Contact me</string>
     <!-- 联系  end -->
+
+    <!-- 加载 start -->
+    <string name="list_loading">Loading…</string>
+    <string name="list_no_more">No More!</string>
+    <string name="list_load_error">Some error happened! \n Please click here try again.</string>
+    <!-- 加载  end -->
 </resources>

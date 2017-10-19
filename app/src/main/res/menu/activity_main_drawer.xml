@@ -17,23 +17,23 @@
     </group>
 
     <item android:title="Communicate">
-            <menu>
-                <group android:checkableBehavior="single">
+        <menu>
+            <group android:checkableBehavior="single">
 
                 <item
-                    android:id="@+id/nav_share"
+                    android:id="@+id/nav_contact"
                     android:icon="@drawable/ic_menu_contact"
                     android:title="@string/contact_me" />
                 <item
-                    android:id="@+id/nav_send"
-                    android:icon="@drawable/ic_menu_home"
-                    android:title="Send" />
-                </group>
-            </menu>
+                    android:id="@+id/nav_movie"
+                    android:icon="@drawable/ic_menu_movie"
+                    android:title="@string/douban_movie" />
+            </group>
+        </menu>
     </item>
 
     <item
-        android:id="@+id/nav_gallery"
+        android:id="@+id/nav_map"
         android:icon="@drawable/ic_menu_map"
         android:title="@string/baidu_map" />
 </menu>

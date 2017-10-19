@@ -1,32 +1,74 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.songjy.introduction.ui.HomeFragment">
 
-    <Button
-        android:id="@+id/btn_bind_service"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="绑定service" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_unbind_service"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="解绑service" />
+        <Button
+            android:id="@+id/btn_bind_service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="绑定service" />
 
-    <Button
-        android:id="@+id/btn_start_service"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="开启service" />
+        <Button
+            android:id="@+id/btn_unbind_service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="解绑service" />
 
-    <Button
-        android:id="@+id/btn_stop_service"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="关闭service" />
+        <Button
+            android:id="@+id/btn_start_service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开启service" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btn_stop_service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="关闭service" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llay_error"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_write"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/empty"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_error"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llay_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_write"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:indicator="Pacman"
+            app:indicator_color="@color/colorPrimary" />
+
+    </LinearLayout>
+</FrameLayout>
