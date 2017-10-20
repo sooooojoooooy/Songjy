@@ -39,7 +39,6 @@ public class MovieMsgFragment extends BaseFragment implements OnMovieMsgListener
     TextView tvError;
     @BindView(R.id.llay_error)
     LinearLayout llayError;
-    Unbinder unbinder;
     private MovieMsgModel movieMsgModel;
     private final int count = 10;
     private int start = 0;

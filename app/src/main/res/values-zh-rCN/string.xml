@@ -8,6 +8,7 @@
     <!-- PageName start -->
     <string name="douban_movie">豆瓣评分</string>
     <string name="baidu_map">地图</string>
+    <string name="weather">天气</string>
     <string name="contact_me">联系我</string>
     <string name="home_page">主页</string>
     <string name="setting_page_title">设置</string>
@@ -51,4 +52,16 @@
     <string name="list_no_more">别拉了，没了！</string>
     <string name="list_load_error">加载错误或无网络环境！\n请点击这里重新加载。</string>
     <!-- 加载  end -->
+
+    <!-- 天气  end -->
+    <string name="weather_today">今天</string>
+    <string name="weather_tomorrow">明天</string>
+    <string name="weather_sunday">星期日</string>
+    <string name="weather_monday">星期一</string>
+    <string name="weather_tuesday">星期二</string>
+    <string name="weather_wednesday">星期三</string>
+    <string name="weather_thursday">星期四</string>
+    <string name="weather_friday">星期五</string>
+    <string name="weather_saturday">星期六</string>
+    <!-- 天气 start -->
 </resources>

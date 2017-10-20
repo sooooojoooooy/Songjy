@@ -42,6 +42,7 @@ public class MainActivity extends BaseActivity
     private HomeFragment homeFragment;
     private ContactFragment contactFragment;
     private MovieMsgFragment movieMsgFragment;
+    private WeatherFragment weatherFragment;
     private PreferenceFragment settingFragment;
 
     @Override
@@ -120,7 +121,6 @@ public class MainActivity extends BaseActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
@@ -135,8 +135,11 @@ public class MainActivity extends BaseActivity
                 movieMsgFragment = new MovieMsgFragment();
             }
             switchContent(movieMsgFragment);
-        } else if (id == R.id.nav_manage) {
-
+        } else if (id == R.id.nav_weather) {
+            if (null == weatherFragment){
+                weatherFragment = new WeatherFragment();
+            }
+            switchContent(weatherFragment);
         } else if (id == R.id.nav_contact) {
             if (null == contactFragment) {
                 contactFragment = new ContactFragment();
@@ -153,7 +156,7 @@ public class MainActivity extends BaseActivity
                 .doOnNext(fragment -> {
                     FragmentTransaction transaction = mFragmentMan.beginTransaction();
                     transaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
-                    if (!to.isAdded()) {    // 先判断是否被add过
+                    if (!fragment.isAdded()) {    // 先判断是否被add过
                         transaction.hide(displayFragment).add(flay_main_content, fragment).commit(); // 隐藏当前的fragment，add下一个到Activity中
                     } else {
                         transaction.hide(displayFragment).show(fragment).commit(); // 隐藏当前的fragment，显示下一个
