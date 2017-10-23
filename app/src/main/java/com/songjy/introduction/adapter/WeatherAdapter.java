@@ -1,6 +1,7 @@
 package com.songjy.introduction.adapter;
 
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,17 +11,18 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-
 import com.songjy.introduction.R;
 import com.songjy.introduction.common.WeatherTypeEnum;
-import com.songjy.introduction.common.utils.ImageLoader;
+import com.songjy.introduction.common.utils.LoaderUtil;
 import com.songjy.introduction.common.utils.TimeUitl;
 import com.songjy.introduction.common.utils.Util;
 import com.songjy.introduction.entity.weather.HeWeather5Bean;
+import com.songjy.introduction.entity.weather.WeatherEntity;
 
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class WeatherAdapter extends AnimRecyclerViewAdapter<RecyclerView.ViewHolder> {
     private static String TAG = WeatherAdapter.class.getSimpleName();
@@ -136,7 +138,7 @@ public class WeatherAdapter extends AnimRecyclerViewAdapter<RecyclerView.ViewHol
                     tempQuality.setText(String.format("AQI：%s",
                             Util.safeText(weather.getAqi().getCity().getQlty())));
                 }
-                ImageLoader.load(itemView.getContext(),
+                LoaderUtil.load(itemView.getContext(),
                         WeatherTypeEnum.getResId(weather.getNow().getCond().getCode()),
                         weatherIcon);
             } catch (Exception e) {
@@ -268,12 +270,12 @@ public class WeatherAdapter extends AnimRecyclerViewAdapter<RecyclerView.ViewHol
                     if (i > 1) {
                         try {
                             forecastDate[i].setText(
-                                    TimeUitl.dayForWeek(weather.getDaily_forecast().get(i).getDate(),mContext));
+                                    TimeUitl.dayForWeek(weather.getDaily_forecast().get(i).getDate(), mContext));
                         } catch (Exception e) {
                             Log.e(TAG, e.toString());
                         }
                     }
-                    ImageLoader.load(mContext,
+                    LoaderUtil.load(mContext,
                             WeatherTypeEnum.getResId(weather.getDaily_forecast().get(i).getCond().getCode_d()),
                             forecastIcon[i]);
                     forecastTemp[i].setText(

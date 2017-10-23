@@ -43,7 +43,7 @@ public class MovieMsgFragment extends BaseFragment implements OnMovieMsgListener
     private final int count = 10;
     private int start = 0;
     int lastVisibleItem;
-    boolean isLoading = false;//用来控制进入getdata()的次数
+    boolean isLoading = false;
     private MovieMsgAdapter movieMsgAdapter;
     private List<SubjectsBean> list;
     private LinearLayoutManager mLayoutManager;
@@ -56,6 +56,7 @@ public class MovieMsgFragment extends BaseFragment implements OnMovieMsgListener
         list = new ArrayList<>();
         movieMsgModel.getT250MovieMsg(start, count);
         movieMsgAdapter = new MovieMsgAdapter(getContext(), list);
+        movieMsgAdapter.setHasStableIds(true);
         mLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         icvMovieList.setLayoutManager(mLayoutManager);
         icvMovieList.setAdapter(movieMsgAdapter);
@@ -64,9 +65,9 @@ public class MovieMsgFragment extends BaseFragment implements OnMovieMsgListener
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
                 /*
-                到达底部了,如果不加!isLoading的话到达底部如果还一滑动的话就会一直进入这个方法
-                就一直去做请求网络的操作,这样的用户体验肯定不好.添加一个判断,每次滑倒底只进行一次网络请求去请求数据
-                当请求完成后,在把isLoading赋值为false,下次滑倒底又能进入这个方法了
+                 * 到达底部了,如果不加!isLoading的话到达底部如果还一滑动的话就会一直进入这个方法
+                 * 就一直去做请求网络的操作,这样的用户体验肯定不好.添加一个判断,每次滑倒底只进行一次网络请求去请求数据
+                 * 当请求完成后,在把isLoading赋值为false,下次滑倒底又能进入这个方法了
                  */
                 if (newState == RecyclerView.SCROLL_STATE_IDLE &&
                         lastVisibleItem + 1 == movieMsgAdapter.getItemCount()
@@ -98,10 +99,7 @@ public class MovieMsgFragment extends BaseFragment implements OnMovieMsgListener
 
     @Override
     public void onSuccess(DbMovieEntity rqs) {
-        if (srlRefresh.isRefreshing()) {
-            srlRefresh.setRefreshing(false);
-            list.clear();
-        }
+        srlRefresh.setRefreshing(false);
         start += count;
         isLoading = false;
         list.addAll(rqs.getSubjects());
